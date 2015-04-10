@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> MATGENIUSZ/klasa 1/Zakres podstawowy/ Dodawanie i odejmowanie/Działania/dodawanie i odejmowanie pełnych dziesiątek w zakresie 100</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../../../matgeniusz.css">
+</head>
+<body bgcolor="cyan" onload="MTMST.engine();">
+  <center>
+    <h1> KLASA 1</h1>
+    <h2>Zakres podstawowy</h2>
+    <h3>Dodawanie o odejmowanie</h3>
+    <h4> Działania</h4>
+    <h5> Dodawanie i odejmowanie pełnych dziesiątek w zakresie 100</h5>
+	
+	<b id="mtmst">
+	<i class="mtmst" id="mtmst_1"></i>
+	<i class="mtmst" id="mtmst_znak"></i>
+	<i class="mtmst" id="mtmst_2"></i>
+	=
+	<input id="mtmst_input" onkeyup="MTMST.enter(event)">
+	</b>
+	<button onclick="MTMST.sprawdz()">Sprawdź</button><br>
+	<br>
+	<div id="dobrze" style="display:none;">
+		<b class="good">Dobrze! :)</b><br><br>
+	</div>
+	<div id="zle" style="display:none;">
+		<b class="bad">Źle! :(</b><br>
+		<b class="good">Rozwiązanie: <span id="rozwiazanie"></span></b><br><br>
+	</div>
+	<div id="punkty">
+		Odpowiedzi poprawne: <b id="dobrepunkty" class="good">0</b><br>
+		Odpowiedzi błędne: <b id="zlepunkty" class="bad">0</b>
+	</div>
+	<h5>by skorupa & DKM &copy;</h5>
+  </center>
+  <script type="text/javascript" src="zakres_100.js"></script>
+</body>
+</html>

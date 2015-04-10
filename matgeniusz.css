@@ -1,0 +1,29 @@
+/* MATGENIUSZ */
+/* arkusz CSS */
+/* by skorupa (c) */
+
+body {
+  font-family: Helvetica,Arial,sans-serif;
+}
+
+i.mtmst {
+  font-style: normal;
+}
+
+center {
+  width:500px;
+  height: auto;
+  border-radius: 40px;
+  background-color: burlywood;
+  padding: 10px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.good {
+  color:lime;
+}
+
+.bad {
+  color:red;
+}
