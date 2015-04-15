@@ -5,3 +5,4 @@ MATGENIUSZ =
 3. Zadania tekstowe.
 
 coś jak MATMASTER
+
