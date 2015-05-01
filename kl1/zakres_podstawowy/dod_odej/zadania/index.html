@@ -3,21 +3,33 @@
 <head>
 <title>MATGENIUSZ/klasa 1/Zakres podstawowy/Dodawanie i odejmowanie/Zadania tekstowe </title>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="//zaxad23.github.io/matgeniusz.css">
 </head>
-<body bgcolor="cyan">
+<body style="background-color:cyan;">
 <center>
 <h1> KLASA1 </h1>
 <h2> Zakres podstawowy </h2>
 <h3> Dodawanie i odejmowanie </h3>
 <h4> Zadania tekstowe</h4>
-Ala ma siedem jabłek. Oddała Stasiowi 3 jabłka. Potem mama Ali dała jej 2 jabłka. Ile jabłek ma teraz Ala?<br>
-<button id="rozwiazanie_a"> Pokaż rozwiązanie </button><br>
-<div id="lol"></div>
-<script type="text/javascript">
-function rozwiazanie_a(){
-document.getElementById("lol").innerHTML="Ala ma teraz 6 jabłek";
 
-}
-</script><br>
+<!-- pytanie 1 -->
+<div id="1">
+Ala ma siedem jabłek. Oddała Stasiowi 3 jabłka. Potem mama Ali dała jej 2 jabłka. Ile jabłek ma teraz Ala?<br>
+<button onclick="show(1,this)"> Pokaż rozwiązanie </button><br>
+</div>
+<!-- koniec pytania 1 -->
+
+<script type="text/javascript">
+
+  var odpowiedzi = [
+    "Ala ma teraz 6 jabłek"
+  ];
+  
+  function show(numer,object){
+    object.style.display = "none";
+    document.getElementById(numer).innerHTML += "Odpowiedź: "+ odpowiedzi[numer-1];
+  }
+</script>
+<br>
 </center>
 </html>
