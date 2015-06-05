@@ -19,22 +19,28 @@ function id(ID){
 // w *.js skrót pisać wielkimi literami, w *.html - małymi
 
 var MTMST = {};
-MTMST._1 = 0;
-MTMST._znak = "";
-MTMST._2 = 0;
-MTMST.znaki = ["+","-"];
+
+MTMST._1 = 0; // 1. składnik
+MTMST._znak = ""; // znak
+MTMST._2 = 0; // 2. składnik
+
+MTMST.znaki = ["+","-"/* ,"*","/" */]; // znaki do wykorzystania
 MTMST.tmp = {};
-MTMST._dobrepunkty=0;
-MTMST._zlepunkty=0;
+MTMST._dobrepunkty = 0;
+MTMST._zlepunkty = 0;
+
+MTMST.fraction = false; // ułamek
+MTMST.limit = 100;
 
 MTMST.los_1_2 = function(){
-   MTMST.tmp.znak = randomize(2);
+   MTMST.tmp.znak = randomize(MTMST.znaki.length);
    MTMST._znak = MTMST.znaki[MTMST.tmp.znak];
    id("mtmst_znak").innerHTML = MTMST._znak;
    MTMST._1 = randomize(11)*10;
    MTMST._2 = randomize(11)*10;
    
-   if(MTMST._znak="-" && MTMST._1<MTMST._2) MTMST.los_1_2();
+   if(MTMST._znak=="-" && MTMST._1<MTMST._2) MTMST.los_1_2();
+   else if(MTMST._znak=="/" && MTMST._1<MTMST._2) MTMST.los_1_2();
    MTMST._znak = MTMST.znaki[MTMST.tmp.znak];
 }
 
@@ -45,7 +51,10 @@ MTMST.engine = function(){
    id("mtmst_1").innerHTML = MTMST._1;
    id("mtmst_2").innerHTML = MTMST._2;
    MTMST.rozwiazanie = eval(MTMST._1+MTMST._znak+MTMST._2);
-   if(MTMST.rozwiazanie>100) MTMST.engine();
+   if(MTMST.rozwiazanie>MTMST.limit) MTMST.engine();
+   else if(Math.floor(MTMST.rozwiazanie) != MTMST.rozwiazanie && !MTMST.fraction)
+      MTMST.engine();
+      
    delete(MTMST.rozwiazanie); // spadaj hakerze XD
 }
 
@@ -58,11 +67,11 @@ MTMST.sprawdz = function(){
 	MTMST.wynikUzytkownika = id("mtmst_input").value;
 	
 	MTMST.wynikUzytkownika = MTMST.wynikUzytkownika.replace(",",".");
+   MTMST.wynikUzytkownika = MTMST.wynikUzytkownika.replace(/ /g,"");
+   
 	Number(MTMST.wynikUzytkownika);
 	String(MTMST.wynikUzytkownika);
-	if(id("mtmst_input").value != String(Number(MTMST.wynikUzytkownika)) && id("mtmst_input").value != ""){
-		alert("Wykryto spację!\nAby system sprawdził ci wynik, usuń spacje.");
-	} else if(MTMST.rozwiazanie != MTMST.wynikUzytkownika || id("mtmst_input").value=="") {
+	if(MTMST.rozwiazanie != MTMST.wynikUzytkownika || id("mtmst_input").value=="") {
 		// zle
 		id("dobrze").style.display = "none";
 		id("zle").style.display = "block";
@@ -88,5 +97,5 @@ setInterval(function(){
 },1000);
 
 setInterval(function(){
-	document.body.setAttribute("onerror","document.body.innerHTML = 'ERROR: prawdopodobnie hakowanie'")
+	document.body.setAttribute("onerror","document.body.innerHTML = 'ERROR: prawdopodobnie hakowanie'");
 },2000);

@@ -14,13 +14,15 @@
     <h5> Dodawanie w zakresie 20</h5>
 	
 	<b id="mtmst">
-	<i class="mtmst" id="mtmst_1"></i>
-	<i class="mtmst" id="mtmst_znak"></i>
-	<i class="mtmst" id="mtmst_2"></i>
-	=
-	<input id="mtmst_input" onkeyup="MTMST.enter(event)">
+    <i class="mtmst" id="mtmst_1"></i>
+    <i class="mtmst" id="mtmst_znak"></i>
+    <i class="mtmst" id="mtmst_2"></i>
+    =
+    <input id="mtmst_input" onkeyup="MTMST.enter(event)">
 	</b>
+  
 	<button onclick="MTMST.sprawdz()">Sprawdź</button><br>
+  
 	<br>
 	<div id="dobrze" style="display:none;">
 		<b class="good">Dobrze! :)</b><br><br>
@@ -29,6 +31,7 @@
 		<b class="bad">Źle! :(</b><br>
 		<b class="good">Rozwiązanie: <span id="rozwiazanie"></span></b><br><br>
 	</div>
+  
 	<div id="punkty">
 		Odpowiedzi poprawne: <b id="dobrepunkty" class="good">0</b><br>
 		Odpowiedzi błędne: <b id="zlepunkty" class="bad">0</b>
